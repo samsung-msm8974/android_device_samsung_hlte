@@ -13,10 +13,27 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# inherit from common hlte
-include device/samsung/hlte-common/BoardConfigCommon.mk
+DEVICE_PATH := device/samsung/hlte
+COMMON_PATH := device/samsung/msm8974-common
 
+# inherit from msm8974-common
+include device/samsung/msm8974-common/BoardConfigCommon.mk
+
+# Bluetooth
+BOARD_CUSTOM_BT_CONFIG := $(COMMON_PATH)/bluetooth/vnd_hlte.txt
+
+# OTA
 TARGET_OTA_ASSERT_DEVICE := hlte,hltespr,hltexx
+
+# Partition
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2365587456
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 28651290624
+
+# Properties
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+
+# Include light
+TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/hlte-include
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_hlte
@@ -32,3 +49,4 @@ include $(COMMON_PATH)/radio/single/board.mk
 
 # inherit from the proprietary version
 include vendor/samsung/hlte/BoardConfigVendor.mk
+include vendor/samsung/hlte-common/BoardConfigVendor.mk

@@ -1,2 +1,0 @@
-# Radio - pinned to haxxed N9005XXSGBRI2_N9005AUTGBRI1_AUT
-lib/libsec-ril.so:vendor/lib/libsec-ril.gsm.so|3337e353ee5bb6a71dac61dbc6d8207888b04369

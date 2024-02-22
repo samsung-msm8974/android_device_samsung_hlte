@@ -9,7 +9,7 @@
 set -e
 
 export DEVICE=hlte
-export DEVICE_COMMON=hlte-common
+export DEVICE_COMMON=msm8974-common
 export VENDOR=samsung
 
 function blob_fixup() {
@@ -52,7 +52,7 @@ export SRC
 
 setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false
 
-for BLOB_LIST in "${MY_DIR}"/device-proprietary-files*.txt; do
+for BLOB_LIST in "${MY_DIR}"/device-proprietary-files.txt; do
     extract "${BLOB_LIST}" "${SRC}"
 done
 
