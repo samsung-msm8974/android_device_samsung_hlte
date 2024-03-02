@@ -36,7 +36,7 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/hlte-include
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_hlte
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_hlte
 
 # Kernel
 TARGET_KERNEL_CONFIG := lineage_hlte_bcm2079x_defconfig
